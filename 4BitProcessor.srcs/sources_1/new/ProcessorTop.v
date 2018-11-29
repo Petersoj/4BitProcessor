@@ -20,10 +20,23 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module ProcessorTop(
-    input clk
+module ProcessorTop (
+    input clk,
+    input [7:0] singleInstr,
+    input modeSwitch, // Single-Step Mode = 0, Run-Mode = 1
+    input executeBtn,
+    output [3:0] led
     );
     
+    wire [7:0] instr;
+    wire execute;
+    wire done;
     
+    InstructionFSM iFSM (.clk(clk), .singleInstr(singleInstr), 
+                        .modeSwitch(modeSwitch), .executeBtn(executeBtn),
+                        .executeDone(done),
+                        .instr(instr), .execute(execute));
     
+    ProcessorFSM pFSM (.clk(clk), .execute(execute), .instr(instr),
+                        .done(done), .outputReg(led));
 endmodule

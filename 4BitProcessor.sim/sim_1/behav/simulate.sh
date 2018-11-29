@@ -9,4 +9,4 @@ then
 exit $RETVAL
 fi
 }
-ExecStep $xv_path/bin/xsim ALUTest_behav -key {Behavioral:sim_1:Functional:ALUTest} -tclbatch ALUTest.tcl -log simulate.log
+ExecStep $xv_path/bin/xsim ProcessorTest_behav -key {Behavioral:sim_1:Functional:ProcessorTest} -tclbatch ProcessorTest.tcl -log simulate.log

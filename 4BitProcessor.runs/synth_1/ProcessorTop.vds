@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Thu Nov 29 14:29:31 2018
+# Process ID: 9225
+# Current directory: /home/jacob/Documents/ECE2700/4BitProcessor/4BitProcessor.runs/synth_1
+# Command line: vivado -log ProcessorTop.vds -mode batch -messageDb vivado.pb -notrace -source ProcessorTop.tcl
+# Log file: /home/jacob/Documents/ECE2700/4BitProcessor/4BitProcessor.runs/synth_1/ProcessorTop.vds
+# Journal file: /home/jacob/Documents/ECE2700/4BitProcessor/4BitProcessor.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source ProcessorTop.tcl -notrace
+Command: synth_design -top ProcessorTop -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+ERROR: [Synth 8-2721] system call size not allowed in this dialect. Use System Verilog mode [/home/jacob/Documents/ECE2700/4BitProcessor/4BitProcessor.srcs/sources_1/new/InstructionFSM.v:39]
+INFO: [Synth 8-2350] module InstructionFSM ignored due to previous errors [/home/jacob/Documents/ECE2700/4BitProcessor/4BitProcessor.srcs/sources_1/new/InstructionFSM.v:23]
+Failed to read verilog '/home/jacob/Documents/ECE2700/4BitProcessor/4BitProcessor.srcs/sources_1/new/InstructionFSM.v'
+INFO: [Common 17-83] Releasing license: Synthesis
+3 Infos, 0 Warnings, 0 Critical Warnings and 2 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 29 14:29:43 2018...

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1543526971">
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="RDI-RDI" Name="ProcessorTop.vdi"/>
+  <File Type="BG-DRC" Name="ProcessorTop.drc"/>
+  <File Type="BG-BGN" Name="ProcessorTop.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="ProcessorTop.sysdef"/>
+  <File Type="BITSTR-MMI" Name="ProcessorTop.mmi"/>
+  <File Type="BITSTR-BMM" Name="ProcessorTop_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="ProcessorTop.nky"/>
+  <File Type="BITSTR-RBT" Name="ProcessorTop.rbt"/>
+  <File Type="BITSTR-MSK" Name="ProcessorTop.msk"/>
+  <File Type="BG-BIN" Name="ProcessorTop.bin"/>
+  <File Type="BG-BIT" Name="ProcessorTop.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="ProcessorTop_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="ProcessorTop_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="ProcessorTop_postroute_physopt.dcp"/>
+  <File Type="ROUTE-CLK" Name="ProcessorTop_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="ProcessorTop_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="ProcessorTop_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="ProcessorTop_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="ProcessorTop_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="ProcessorTop_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="ProcessorTop_route_status.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="ProcessorTop_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="ProcessorTop_power_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="ProcessorTop_drc_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="ProcessorTop_drc_routed.rpt"/>
+  <File Type="ROUTE-DCP" Name="ProcessorTop_routed.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="ProcessorTop_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="ProcessorTop_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="ProcessorTop_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="ProcessorTop_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="ProcessorTop_postplace_pwropt.dcp"/>
+  <File Type="PLACE-TIMING" Name="ProcessorTop_timing_summary_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="ProcessorTop_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="ProcessorTop_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="ProcessorTop_control_sets_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="ProcessorTop_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="ProcessorTop_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="ProcessorTop_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="ProcessorTop_io_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="ProcessorTop_placed.dcp"/>
+  <File Type="PWROPT-TIMING" Name="ProcessorTop_timing_summary_pwropted.rpt"/>
+  <File Type="PWROPT-DRC" Name="ProcessorTop_drc_pwropted.rpt"/>
+  <File Type="PWROPT-DCP" Name="ProcessorTop_pwropt.dcp"/>
+  <File Type="OPT-TIMING" Name="ProcessorTop_timing_summary_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="ProcessorTop.hwdef"/>
+  <File Type="OPT-DRC" Name="ProcessorTop_drc_opted.rpt"/>
+  <File Type="OPT-DCP" Name="ProcessorTop_opt.dcp"/>
+  <File Type="INIT-TIMING" Name="ProcessorTop_timing_summary_init.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="ProcessorTop_timing_summary_postroute_physopted.pb"/>
+  <File Type="PA-TCL" Name="ProcessorTop.tcl"/>
+  <File Type="RUN-STRAT" Name="$PDATADIR/runs/impl_1/impl_1.psg"/>
+  <File Type="RUN-SRCS" Name="$PDATADIR/runs/impl_1/sources.xml"/>
+  <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/impl_1/constrs_in.xml"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/ButtonDebounce.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/InstructionFSM.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ProcessorFSM.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ProcessorTop.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ALU.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="ProcessorTop"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/Downloads/Basys-3-Master.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/Basys-3-Master.xdc"/>
+        <Attr Name="ImportTime" Val="1538206292"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2015"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>
