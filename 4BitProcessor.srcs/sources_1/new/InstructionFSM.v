@@ -45,35 +45,41 @@ module InstructionFSM (
     wire btnExecute;
     ButtonDebounce btnDb (.clk(clk), .b(executeBtn), .d(btnExecute));
     
-    reg executingProgram = 0;
     
+    // State Machine
     always @(posedge clk) begin
-        if (executeDone) begin // Only change instr if ProcessorFSM is done executing
-            if (modeSwitch) begin // Run-mode
-                if (executingProgram) begin
-                    if (programIndex == PROGRAM_LINE_COUNT - 1) begin
-                        executingProgram <= 0;
-                        programIndex <= 0;
-                        execute <= 0;
-                    end else begin // programIndex < PROGRAM_LINE_COUNT
-                        // #2; // Short delay for ProcessorFSM to execute first
-                        instr <= PROGRAM[programIndex - 1];
-                        programIndex <= programIndex + 1;
-                        execute = 1;
-                    end
-                end else begin // executingProgram == 0
-                    execute = 0;
-                    if (btnExecute) begin // executeBtn pressed
-                        executingProgram = 1;
-                    end 
-                end
-            end else begin // Single-Step mode
-                execute = 0;
-                if (btnExecute) begin
-                    instr = singleInstr;
-                    execute = 1; 
-                end
-            end
-        end
+    
     end
+    
+//    reg executingProgram = 0;
+    
+//    always @(posedge clk) begin
+//        if (executeDone) begin // Only change instr if ProcessorFSM is done executing
+//            if (modeSwitch) begin // Run-mode
+//                if (executingProgram) begin
+//                    if (programIndex == PROGRAM_LINE_COUNT - 1) begin
+//                        executingProgram <= 0;
+//                        programIndex <= 0;
+//                        execute <= 0;
+//                    end else begin // programIndex < PROGRAM_LINE_COUNT
+//                        // #2; // Short delay for ProcessorFSM to execute first
+//                        instr <= PROGRAM[programIndex - 1];
+//                        programIndex <= programIndex + 1;
+//                        execute = 1;
+//                    end
+//                end else begin // executingProgram == 0
+//                    execute = 0;
+//                    if (btnExecute) begin // executeBtn pressed
+//                        executingProgram = 1;
+//                    end 
+//                end
+//            end else begin // Single-Step mode
+//                execute = 0;
+//                if (btnExecute) begin
+//                    instr = singleInstr;
+//                    execute = 1; 
+//                end
+//            end
+//        end
+//    end
 endmodule
