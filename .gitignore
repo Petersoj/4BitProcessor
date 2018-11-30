@@ -87,3 +87,7 @@
 !*.elf
 !*.bmm
 !*.xmp
+#######
+# Other
+#######
+!4-Bit_Processor_Assembly_Instruction_Encodings.png
