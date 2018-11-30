@@ -33,7 +33,7 @@ module ProcessorTest();
     initial begin
         clk = 0;
         singleInstr = 8'b0;
-        modeSwitch = 0;
+        modeSwitch = 1;
         executeBtn = 0;
         count = 0;
     
@@ -47,7 +47,7 @@ module ProcessorTest();
     always @(posedge clk) begin
         if (count == 5)
             executeBtn = 1;
-        if (count == 20)
+        if (count == 10)
             executeBtn = 0;
         count = count + 1;
     end

@@ -34,14 +34,14 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/InstructionFSM.v">
+      <File Path="$PSRCDIR/sources_1/new/ProcessorFSM.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/ProcessorFSM.v">
+      <File Path="$PSRCDIR/sources_1/new/InstructionFSM.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -104,7 +104,7 @@
         <Option Name="TopModule" Val="ProcessorTest"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="SrcSet" Val="sources_1"/>
-        <Option Name="xsim.simulate.runtime" Val="250ns"/>
+        <Option Name="xsim.simulate.runtime" Val="150ns"/>
       </Config>
     </FileSet>
   </FileSets>

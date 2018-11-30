@@ -29,7 +29,7 @@ module ALU(
     output reg cout = 0
     );
     
-    always @(posedge clk, en) begin
+    always @(posedge clk) begin
         if (en == 1) begin
             case (instr)
                 2'b00: {cout, z} = {1'b0, a} + {1'b0, b};

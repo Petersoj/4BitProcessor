@@ -24,18 +24,116 @@ module ProcessorFSM (
     input clk,
     input execute,
     input [7:0] instr,
-    output reg done = 0,
+    output reg done = 1, // Processor is initially done
     output reg [3:0] outputReg = 0
     );
     
-    reg [3:0] R3 = 0, R2 = 0, R1 = 0, R0 = 0;
+    reg [3:0] R [3:0] = {0,0,0,0}; // 4 4-Bit registers
     
-    reg [1:0] state = 2'b00;
-    parameter LOAD_INSTR = 2'b01, EXECUTE = 2'b10;
+    reg [2:0] state = 3'b0; // # of states = log2(# of Instructions + 1 (for wait))
+    parameter WAIT  = 3'b000,
+              LOAD  = 3'b001,
+              STORE = 3'b010,
+              MOVE  = 3'b011,
+              ADD   = 3'b100,
+              SUB   = 3'b101,
+              AND   = 3'b110,
+              NOT   = 3'b111;
     
     always @(posedge clk) begin
-        if (execute == 1) begin
-            outputReg = instr[3:0];
-        end
+        case (state)
+            WAIT: begin
+                if (execute) begin
+                    case (instr[7:6]) // Encoded General Instruction bits 
+                        2'b00: begin
+                            state <= LOAD;
+                        end
+                        2'b01: begin
+                            state <= STORE;
+                        end
+                        2'b10: begin
+                            state <= MOVE;
+                        end
+                        2'b11: begin
+                            case (instr[1:0]) // Encoded ALU operation bits 
+                                2'b00: begin
+                                    state <= ADD;
+                                end
+                                2'b01: begin
+                                    state <= SUB;
+                                end
+                                2'b10: begin
+                                    state <= AND;
+                                end
+                                2'b11: begin
+                                    state <= NOT;
+                                end
+                            endcase
+                        end
+                    endcase
+                end
+            end
+            LOAD: begin
+                R[instr[5:4]] <= instr[3:0];
+                state <= WAIT;
+            end
+            STORE: begin
+                outputReg <= R[instr[5:4]];
+                state <= WAIT;
+            end
+            MOVE: begin
+                R[instr[5:4]] = R[instr[3:2]];
+                state <= WAIT;
+            end
+            ADD: begin
+                R[instr[5:4]] = R[instr[5:4]] + R[instr[3:2]];
+                state <= WAIT;
+            end
+            SUB: begin
+                R[instr[5:4]] = R[instr[5:4]] - R[instr[3:2]];
+                state <= WAIT;
+            end
+            AND: begin
+                R[instr[5:4]] = R[instr[5:4]] & R[instr[3:2]];
+                state <= WAIT;
+            end
+            NOT: begin
+                R[instr[5:4]] = ~R[instr[5:4]];
+                state <= WAIT;
+            end
+        endcase
     end
+    
+//    always @(posedge clk) begin
+//        case (state)
+//            LOAD: begin
+//                R[instr[5:4]] <= instr[3:0];
+//                state <= WAIT;
+//            end
+//            STORE: begin
+//                outputReg <= R[instr[5:4]];
+//                state <= WAIT;
+//            end
+//            MOVE: begin
+//                R[instr[5:4]] = R[instr[3:2]];
+//                state <= WAIT;
+//            end
+//            ADD: begin
+//                R[instr[5:4]] = R[instr[5:4]] + R[instr[3:2]];
+//                state <= WAIT;
+//            end
+//            SUB: begin
+//                R[instr[5:4]] = R[instr[5:4]] - R[instr[3:2]];
+//                state <= WAIT;
+//            end
+//            AND: begin
+//                R[instr[5:4]] = R[instr[5:4]] & R[instr[3:2]];
+//                state <= WAIT;
+//            end
+//            NOT: begin
+//                R[instr[5:4]] = ~R[instr[5:4]];
+//                state <= WAIT;
+//            end
+//        endcase
+//    end
 endmodule

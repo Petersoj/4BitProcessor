@@ -17,8 +17,8 @@ set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
 set_property vhdl_version vhdl_2k [current_fileset]
 read_verilog -library xil_defaultlib {
   /home/jacob/Documents/ECE2700/4BitProcessor/4BitProcessor.srcs/sources_1/new/ButtonDebounce.v
-  /home/jacob/Documents/ECE2700/4BitProcessor/4BitProcessor.srcs/sources_1/new/InstructionFSM.v
   /home/jacob/Documents/ECE2700/4BitProcessor/4BitProcessor.srcs/sources_1/new/ProcessorFSM.v
+  /home/jacob/Documents/ECE2700/4BitProcessor/4BitProcessor.srcs/sources_1/new/InstructionFSM.v
   /home/jacob/Documents/ECE2700/4BitProcessor/4BitProcessor.srcs/sources_1/new/ProcessorTop.v
 }
 read_xdc /home/jacob/Documents/ECE2700/4BitProcessor/4BitProcessor.srcs/constrs_1/imports/Downloads/Basys-3-Master.xdc
