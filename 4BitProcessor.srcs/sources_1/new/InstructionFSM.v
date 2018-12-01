@@ -49,8 +49,8 @@ module InstructionFSM (
     reg [7:0] PROGRAM [0:PROGRAM_LINE_COUNT - 1] = {
         {LOAD, REG_0, 4'b0001}, // Load 1 into REG_0
         {LOAD, REG_1, 4'b0010}, // Load 2 into REG_1
-        {LOAD, REG_2, 4'b1001}, // Load 9 into REG_3
-        {LOAD, REG_3, 4'b0100}, // Load 4 into REG_4
+        {LOAD, REG_2, 4'b1001}, // Load 9 into REG_2
+        {LOAD, REG_3, 4'b0100}, // Load 4 into REG_3
         {ALU, REG_0, REG_1, ADD}, // REG_0 = REG_0 + REG_1
         {ALU, REG_2, REG_3, SUB}, // REG_2 = REG_2 - REG_3
         {STORE, REG_2, 4'b0000} // LED & 7-Seg = REG_2 = 5
