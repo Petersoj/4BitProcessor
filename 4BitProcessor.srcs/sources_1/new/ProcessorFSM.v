@@ -31,14 +31,14 @@ module ProcessorFSM (
     reg [3:0] R [3:0] = {0,0,0,0}; // 4 4-Bit registers
     
     reg [2:0] state = 3'b0; // # of states = log2(# of Instructions + 1 (for wait))
-    parameter WAIT  = 3'b000,
-              LOAD  = 3'b001,
-              STORE = 3'b010,
-              MOVE  = 3'b011,
-              ADD   = 3'b100,
-              SUB   = 3'b101,
-              AND   = 3'b110,
-              NOT   = 3'b111;
+    parameter WAIT  = 3'd0,
+              LOAD  = 3'b1,
+              STORE = 3'd2,
+              MOVE  = 3'd3,
+              ADD   = 3'd4,
+              SUB   = 3'd5,
+              AND   = 3'd6,
+              NOT   = 3'd7;
     
     always @(posedge clk) begin
         case (state)
